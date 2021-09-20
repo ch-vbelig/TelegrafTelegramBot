@@ -1,4 +1,4 @@
-const { Telegraf, Extra, Markup, Scenes, session } = require('telegraf')
+const { Telegraf, Scenes, session } = require('telegraf')
 require('dotenv/config')
 const constants = require('./constants')
 const AuthenticationSceneGenerator = require('./scenes/AuthenticationSceneGenerator')
@@ -8,7 +8,6 @@ const ShowVacancySceneGenerator = require('./scenes/ShowVacancySceneGenerator')
 const ApplyVacancySceneGenerator = require('./scenes/ApplyVacancySceneGenerator')
 const ProfileSceneGenerator = require('./scenes/ProfileSceneGenerator')
 const format = require('string-format')
-const { Buffer } = require('buffer')
 
 format.extend(String.prototype, {})
 
@@ -31,11 +30,11 @@ const applyVacancyScene = applyVacancySceneGenerator.ApplyVacancyScene()
 const profileScene = profileSceneGenerator.ProfileScene()
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
+
+// Include all scenes
 const stage = new Scenes.Stage(
-    [loginScene, tokenScene, welcomeScene, sortByCompanyScene, sortByVacancyScene, sortByTagsScene, showVacancyScene, profileScene, applyVacancyScene])
-
-const isLoggedIn = true
-
+    [loginScene, tokenScene, welcomeScene, sortByCompanyScene,
+        sortByVacancyScene, sortByTagsScene, showVacancyScene, profileScene, applyVacancyScene])
 
 // Middlewares
 bot.use(Telegraf.log())
@@ -46,14 +45,14 @@ bot.use(stage.middleware())
 bot.use((ctx, next) => ctx.chat.type !== "private" ? ctx.reply(constants.TEXT_CHAT_NOT_PRIVATE) : next())
 
 // Middleware: Check if user is authenticated
-// bot.use(async (ctx, next) => {
-//     if ( ctx.session.user === undefined) {
-//         await ctx.reply(constants.TEXT_NOT_LOGGED_IN)
-//         ctx.scene.enter('login')
-//     } else if (ctx.session.user.isLogged) {
-//         next()
-//     }
-// })
+bot.use(async (ctx, next) => {
+    if ( ctx.session.user === undefined) {
+        await ctx.reply(constants.TEXT_NOT_LOGGED_IN)
+        ctx.scene.enter('login')
+    } else if (ctx.session.user.isLogged) {
+        next()
+    }
+})
 
 // Middleware: Check if user is applying to a vacancy
 bot.use(async (ctx, next) => {

@@ -80,12 +80,12 @@ class ApplyVacancySceneGenerator {
                 await ctx.scene.leave()
 
             } else if (ctx.message.text === "Нет") {
-                await ctx.reply("Rejected", markup_sort)
+                await ctx.reply("Отменено", markup_sort)
                 await ctx.scene.leave()
             }
         })
 
-        applyVacancyScene.on("message", (ctx) => ctx.reply("Data not correct"))
+        applyVacancyScene.on("message", (ctx) => ctx.reply("Отправьте текст"))
         return applyVacancyScene
     }
 

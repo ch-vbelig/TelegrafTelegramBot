@@ -33,7 +33,8 @@ class ShowVacancySceneGenerator {
                     msg += "\t\t\t\t📍 Описание: {0}\n".format(record['description'])
                     msg += "\t\t\t\t📍 Теги: {0}\n".format((record['tags'].join(", ")))
                     // encode
-                    const click = "/ar_" + new Buffer(record['click']).toString('base64');
+                    const encoded = new Buffer(record['click']).toString('base64');
+                    const click = "/ar_" + encoded.substr(0, encoded.length-2);
 
                     msg += "\t\t\t\t📍 Откликнуться: {0}\n\n\n".format("{0}".format(click))
                 })

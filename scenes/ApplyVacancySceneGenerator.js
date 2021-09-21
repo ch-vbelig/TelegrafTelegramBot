@@ -85,7 +85,7 @@ class ApplyVacancySceneGenerator {
             }
         })
 
-        applyVacancyScene.on("message", (ctx) => ctx.reply("Отправьте текст"))
+        applyVacancyScene.on("message", (ctx) => ctx.reply("Отправьте сообщение в виде текста"))
         return applyVacancyScene
     }
 

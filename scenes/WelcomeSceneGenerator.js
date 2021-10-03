@@ -23,6 +23,7 @@ class WelcomeSceneGenerator {
 
         // Enter
         welcomeScene.enter( async  (ctx) => {
+            await ctx.replyWithSticker(constants.STICKER_ID_HELLO)
             await ctx.reply( constants.INTRODUCTION.format(ctx.message.from, ctx.me, 6),  {
                 parse_mode: 'HTML',
                 reply_markup: markup.reply_markup

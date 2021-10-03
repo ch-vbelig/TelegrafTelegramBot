@@ -47,6 +47,7 @@ bot.use((ctx, next) => ctx.chat.type !== "private" ? ctx.reply(constants.TEXT_CH
 // Middleware: Check if user is authenticated
 bot.use(async (ctx, next) => {
     if ( ctx.session.user === undefined) {
+        await ctx.replyWithSticker(constants.STICKER_ID_NOT_LOGGED)
         await ctx.reply(constants.TEXT_NOT_LOGGED_IN)
         ctx.scene.enter('login')
     } else if (ctx.session.user.isLogged) {
@@ -57,7 +58,7 @@ bot.use(async (ctx, next) => {
 // Middleware: Check if user is applying to a vacancy
 bot.use(async (ctx, next) => {
 
-    ctx.message && ctx.message.text.includes("/ar_")
+    ctx.message && ctx.message.text && ctx.message.text.includes("/ar_")
         ? ctx.scene.enter(constants.ID_APPLY_VACANCY_SCENE, {
             message: ctx.message.text.substr(4)
         })
@@ -72,6 +73,7 @@ bot.hears(constants.BUTTON_TEXT_SORT_BY_COMPANIES, (ctx) => ctx.scene.enter(cons
 bot.hears(constants.BUTTON_TEXT_SORT_BY_POSITIONS, (ctx) => ctx.scene.enter(constants.ID_SORT_BY_VACANCY_SCENE))
 bot.hears(constants.BUTTON_TEXT_SORT_BY_TAGS, (ctx) => ctx.scene.enter(constants.ID_SORT_BY_TAGS_SCENE))
 bot.hears(constants.BUTTON_TEXT_SHOW_PROFILE, (ctx) => ctx.scene.enter(constants.ID_PROFILE_SCENE))
+// bot.on('sticker', (ctx) => ctx.reply(ctx.message.sticker.file_id))
 bot.on('callback_query', (ctx) => ctx.scene.enter(constants.ID_SHOW_VACANCY_SCENE))
 // bot.help((ctx) => ctx.reply('Send me a sticker'))
 

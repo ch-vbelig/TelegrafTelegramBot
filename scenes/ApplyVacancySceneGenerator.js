@@ -74,13 +74,15 @@ class ApplyVacancySceneGenerator {
                     const recordVacancy = ctx.scene.state.record["vacancy"]
 
                     await ctx.telegram.sendMessage(employer_chat_id, "Отклик от пользователя @{0} на роль {1} ".format(username, recordVacancy))
-                    await ctx.reply("Одобрено", markup_sort)
+                    await ctx.replyWithSticker(constants.STICKER_ID_DANCE)
+                    await ctx.reply(constants.TEXT_VACANCY_APPLICATION_SUCCESS, markup_sort)
                 }
 
                 await ctx.scene.leave()
 
             } else if (ctx.message.text === "Нет") {
-                await ctx.reply("Отменено", markup_sort)
+                await ctx.replyWithSticker(constants.STICKER_ID_DONT_KNOW, markup_sort)
+                await ctx.reply(constants.TEXT_VACANCY_APPLICATION_CANCEL, markup_sort)
                 await ctx.scene.leave()
             }
         })

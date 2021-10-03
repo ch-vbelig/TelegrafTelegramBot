@@ -2,24 +2,26 @@
 constants = {
 
     INTRODUCTION: "Привет, {0.firstName}! " +
-        "Я <b>{1}</b> 😜, бот к вашим услугам 🤑\n" +
+        "Я <b>{1}</b> 🐺, бот к вашим услугам 🤙\n" +
         "FFF это платформа, где Вы можете найти новые вакансии, созданная для студентов ТПУ 😎\n" +
-        "В общем, у нас есть <b>{2}</b> работ 😱 над которыми Вы можете поработать\n" +
-        "Выберите, как Вы хотите их отсортировать:",
+        "Короче, у нас есть <b>{2}</b> работ над которыми Вы сможете поработать😏\n" +
+        "Осталось только выбрать,как нужно их отсортировать🤓:",
 
 
-    TEXT_CHAT_NOT_PRIVATE : "Извините, не могу показывать данные в группах и каналах 💁",
-    TEXT_NOT_LOGGED_IN: "Кажется, Вы еще не привязали свою учетную запись 🤔 ",
-    TEXT_ASK_LOGIN : " 🔑 Вы должны аунтефицироваться\nОтправьте мне ваш логин:",
-    TEXT_ASK_TOKEN : "Отлично! Теперь отправьте свой токен",
-    TEXT_INCORRECT_LOGIN_OR_TOKEN : "Извините, возможно вы неправильно указали логин или токен .\nВведите логин заново 🤦‍♂️",
-    TEXT_NOT_LOGIN: "Это не похоже на логин 🤨 ",
-    TEXT_NOT_TOKEN: "Это не похоже на токен 🤨 ",
-    TEXT_PROFILE_NOT_FOUND : "Извините, не нашел информацию о вашем профиле 🤷🏻‍♂️",
+    TEXT_CHAT_NOT_PRIVATE : "Оу сори 😢, не могу показывать данные в группах и каналах 😢",
+    TEXT_NOT_LOGGED_IN: "Здрасте, А Вы кто? Учетную запись то не привязали?🤔 ",
+    TEXT_ASK_LOGIN : " 🔑Аунтефицироваться то всегда нужно🦖\nОтправьте мне ваш логин🤓:",
+    TEXT_ASK_TOKEN : "Кайф! Теперь мне нужен тот самый токен🤙",
+    TEXT_INCORRECT_LOGIN_OR_TOKEN : "Эмм 🤔, возможно вы неправильно указали логин или токен .\nВведите логин заново 🤦‍♂",
+    TEXT_NOT_LOGIN: "Это же не логин🤨 ",
+    TEXT_NOT_TOKEN: "Ну это точно не токен! 🤨 ",
+    TEXT_PROFILE_NOT_FOUND : "Оу сори ☹, не нашел информацию о вашем профиле 🤷🏻‍♂",
 
-    TEXT_VACANCY_LIST_BY_COMPANIES : "Список вакансий, сортированых по компаниям",
-    TEXT_VACANCY_LIST_BY_NAMES : "Список вакансий, сортированых по названиям",
-    TEXT_VACANCY_LIST_BY_TAGS : "Список вакансий, сортированых по тегам",
+    TEXT_VACANCY_LIST_BY_COMPANIES : "Вот, отсортировал вакансии по компаниям🤓",
+    TEXT_VACANCY_LIST_BY_NAMES : "А вот, отсортировал по названиям👀",
+    TEXT_VACANCY_LIST_BY_TAGS : "Вот, список работ по тегам🤪",
+    TEXT_VACANCY_APPLICATION_SUCCESS : "Ухухух, вы приняты)",
+    TEXT_VACANCY_APPLICATION_CANCEL : "Окей, мб найдется что-то еще? 🤞",
 
     ID_WELCOME_SCENE: 'welcome',
     ID_LOGIN_SCENE: 'login',
@@ -30,6 +32,15 @@ constants = {
     ID_PROFILE_SCENE: 'profile',
     ID_SHOW_VACANCY_SCENE: 'show_vacancy',
     ID_APPLY_VACANCY_SCENE: 'apply_vacancy',
+
+    STICKER_ID_HELLO: "CAACAgIAAxkBAAIJl2FLk3dMUC0v0ZuPdrBwA3GkcvgPAAKwDAAC1c7YSRgEfwPw-wzfIQQ",
+    STICKER_ID_DANCE: "CAACAgIAAxkBAAIJk2FLk2xoWNZE3jz-97OvdOf-dbEDAAJVEQACj5nhSiIeHICga4P0IQQ",
+    STICKER_ID_COOL: "CAACAgIAAxkBAAIJkWFLk2tjt4SRO7gqMfWwcYJeoeT6AAJ4DwACQSVISwABxSLmQfOYhiEE",
+    STICKER_ID_COW: "CAACAgIAAxkBAAIJj2FLk06bEFWfhI1_-CiwZFA80Fh-AAJcBAACnNbnClokfVuRQO25IQQ",
+    STICKER_ID_MONKEY: "CAACAgIAAxkBAAIJjWFLk0mcveDX9bWUQ6tzrFvjN5S9AAIMAwACbbBCA1R-zEHxl4T7IQQ",
+    STICKER_ID_DONT_KNOW: "CAACAgIAAxkBAAIJmWFLk3v8977Mr2I4uBOIHvWwfR8IAALRDAACovthSgcRPxdEzhvCIQQ",
+    STICKER_ID_OK: "CAACAgIAAxkBAAIJrWFLk7qmuP9ii-4eTI5jePgAAejzOgACdQ8AAr0nEUoDQnRWf0YLYSEE",
+    STICKER_ID_NOT_LOGGED: "CAACAgIAAxkBAAIJp2FLk6NawsbgQ078rCE6wwmRr7aDAAIvBwACXAJlAyO_3KycROFVIQQ",
 
 
 // Button texts

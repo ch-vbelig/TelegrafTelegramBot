@@ -27,7 +27,10 @@ class AuthenticationSceneGenerator {
         })
 
         // On message
-        loginScene.on("message", (ctx) => ctx.reply(constants.TEXT_NOT_LOGIN))
+        loginScene.on("message", async (ctx) => {
+            await ctx.replyWithSticker(constants.STICKER_ID_COW)
+            await ctx.reply(constants.TEXT_NOT_LOGIN)
+        })
         return loginScene
     }
 
@@ -68,7 +71,10 @@ class AuthenticationSceneGenerator {
                     message: constants.TEXT_INCORRECT_LOGIN_OR_TOKEN})
             }
         })
-        tokenScene.on("message", (ctx) => ctx.reply(constants.TEXT_NOT_TOKEN))
+        tokenScene.on("message", async (ctx) => {
+            await ctx.replyWithSticker(constants.STICKER_ID_MONKEY)
+            await ctx.reply(constants.TEXT_NOT_TOKEN)
+        })
         return tokenScene
     }
 
